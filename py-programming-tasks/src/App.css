@@ -1,0 +1,126 @@
+body {
+  text-align: center;
+  background-color: lightsteelblue;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #222222;
+}
+
+.links {
+  padding: 20px 10px;
+}
+
+.navbar-nav {
+  padding-right: 15px;
+}
+.container{
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 1.5%;
+}
+
+.output-div {
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1); 
+  padding-top: 10px;
+  overflow: auto;
+  max-height: 445px;
+}
+
+.defaulltBg {
+  background-color: lightsteelblue; 
+}
+
+.glossyBg {
+  position: relative;
+  background-color: rgba(43, 45, 51, 0.459);
+  
+}
+
+.glossyBg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(200deg, rgb(101, 161, 201) 25%, rgb(8, 61, 57) 70%);
+  pointer-events: none;
+  backdrop-filter: blur(10px);
+  z-index: -1;
+}
+
+.weatherDiv {
+  color: white;
+}
+
+.weatherGrid {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.weatherContainers .fa-icon {
+  font-size: 24px;
+}
+
+.icons {
+  font-size: 50px;
+}
+
+.weatherContainers {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.container button {
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.weather_div input {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
