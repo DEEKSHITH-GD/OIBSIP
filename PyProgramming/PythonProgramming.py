@@ -23,7 +23,7 @@ socketio = SocketIO(app, cors_allowed_origins="http://localhost:3000")
 
 text_generator = pipeline("text-generation")
 
-API_KEY = "e732a2daae4fc9ea273cc8fad3f51ef7"
+API_KEY = "your_api_key"
 
 input_semaphore = Semaphore(0)
 input = ""

@@ -119,7 +119,7 @@ function FrontEnd() {
     }, [isWeatherLoaded,messages]);
 
     const fetchLocation = (latitude, longitude) => {
-        fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=d32588719faa4b678ce524370b00a404`)
+        fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=your_api_key`)
             .then(response => response.json())
             .then(data => {
                 console.log('Response from OpenCage API:', data)
