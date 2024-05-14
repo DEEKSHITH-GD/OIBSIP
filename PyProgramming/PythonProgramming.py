@@ -23,7 +23,7 @@ socketio = SocketIO(app, cors_allowed_origins="http://localhost:3000")
 
 text_generator = pipeline("text-generation")
 
-API_KEY = "your_api_key"
+API_KEY = "e732a2daae4fc9ea273cc8fad3f51ef7"
 
 input_semaphore = Semaphore(0)
 input = ""
@@ -108,6 +108,7 @@ def send_email(sender_email, password, receiver_email, subject, body, attachment
         server.login(sender_email, password)
         server.sendmail(sender_email, receiver_email, message.as_string())
     print("Email sent successfully!")
+    emit('voice_assistant_event', {'statement': "Email was sent successfully to {}.".format(receiver_email)})
 
 #################################################################################
 def correct_grammar(input):
@@ -190,7 +191,7 @@ def sendEmail():
     confirm_option = Audio_input.audioForSendEmail().lower()
     print(confirm_option)
     if not confirm_option:
-        emit('take_input_event', {'statement': "Type Yes or no"})
+        emit('take_input_event', {'statement': "Type Yes or no: "})
         input_semaphore.acquire()
         confirm_option = input.lower()
         print(confirm_option)

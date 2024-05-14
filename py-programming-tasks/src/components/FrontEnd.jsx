@@ -119,7 +119,7 @@ function FrontEnd() {
     }, [isWeatherLoaded,messages]);
 
     const fetchLocation = (latitude, longitude) => {
-        fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=your_api_key`)
+        fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=d32588719faa4b678ce524370b00a404`)
             .then(response => response.json())
             .then(data => {
                 console.log('Response from OpenCage API:', data)
@@ -283,21 +283,21 @@ function FrontEnd() {
                         <form onSubmit={handleLogin}>
                             <label htmlFor="Username">Username:</label>
                             <input
-                            type="text"
-                            id="Username"
-                            placeholder="Username"
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
-                            required
-                            /><br />
-                            <label htmlFor="Password">Password:</label>
-                            <input
-                            type="password"
-                            id = "Password"
-                            placeholder="Password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            required
+                                type="text"
+                                id="Username"
+                                placeholder="Username"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                                required
+                                /><br />
+                                <label htmlFor="Password">Password:</label>
+                                <input
+                                type="password"
+                                id = "Password"
+                                placeholder="Password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
                             /><br />
                             <button className="btn btn-success" type="submit">Login</button>
                         </form>

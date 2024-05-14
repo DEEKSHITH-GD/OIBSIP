@@ -8,13 +8,11 @@ speech_detected = False
 audioInput = ""
 timeout=10
 
-# Function to capture audio input with a custom timeout
 def captureAudio(timeout=timeout):
     print("Inside capture audio")
     emit('voice_assistant_event', {'statement': "Listening"})
     global audioInput, speech_detected
     speech_detected = False
-    # Function to continuously listen for audio input
     def listen_audio():
         global speech_detected, audioInput
         print("Inside listen_audio")
@@ -30,7 +28,7 @@ def captureAudio(timeout=timeout):
                         print(text)
                         print("true in line 27")
                         speech_detected = True
-                        break  # Stop listening if keyword is detected
+                        break
                     else:
                         emitUnknown()
                         
@@ -44,20 +42,17 @@ def captureAudio(timeout=timeout):
                     print("Wait UnknownValueError in listen_audio")
                     print("Sorry, I couldn't understand what you said.")
                     emitUnknown()
-                    break  # Stop listening
+                    break
 
-    # Start the background thread to listen for audio
     audio_thread = threading.Thread(target=listen_audio)
     audio_thread.start()
     print("thread start")
 
-    # Wait for the specified timeout
-    audio_thread.join(timeout)  # Remove 'engine' argument from here
+    audio_thread.join(timeout)
     print("thread join")
 
 def audioForMain():
     global audioInput
-    # Process the captured audio
     if audioInput != "":
         print("audio input true")
         print("Processing...")
@@ -75,7 +70,6 @@ def audioForMain():
         
 def audioForSendEmail():
     global audioInput
-    # Process the captured audio
     if audioInput != "":
         print("audio input true")
         print("Processing...")
